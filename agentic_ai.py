@@ -1,5 +1,4 @@
 import streamlit as st
-from dotenv import load_dotenv
 from openai import OpenAI
 import os
 import requests
@@ -7,9 +6,11 @@ import json
 import platform
 import webbrowser
 
-# Load API Key
-load_dotenv()
-client = OpenAI()
+# Embed your API key directly (⚠️ For testing purposes only)
+OPENAI_API_KEY = "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"
+
+# Initialize OpenAI client
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Tool: Get weather
 def get_weather(city: str):
